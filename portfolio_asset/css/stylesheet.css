@@ -3349,4 +3349,21 @@ body, html {
     }
   }
 
+  @media only screen and (min-width:981px) {
+    .four-col-gutter .col-wrap {
+      width:calc(25% - 8px + 2px)!important;
+      margin-right:8px!important
+    }
+    .four-col-gutter .col-wrap:last-child {
+      margin-right:0!important
+    }
+    .two-col-gutter .col-wrap {
+      width:calc(50% - 20px + 10px)!important;
+      margin-right:20px!important
+    }
+    .two-col-gutter .col-wrap:last-child {
+      margin-right:0!important
+    }
+  }
+
 
