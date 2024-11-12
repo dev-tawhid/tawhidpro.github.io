@@ -382,3 +382,38 @@ form.on('submit', function (e) {
 });
 
 })(jQuery)
+
+
+
+jQuery(document).ready(function ($) {
+	// Initially hide all items after the 6th one
+	const allItems = $('.portfolio-filter .portfolio-item');
+	allItems.slice(6).hide();
+
+	// On filter button click
+	$('.portfolio-menu a').on('click', function (e) {
+		e.preventDefault();
+
+		const filterValue = $(this).attr('data-filter');
+
+		// Remove 'active' class from all filter links and add it to the clicked one
+		$('.portfolio-menu a').removeClass('active');
+		$(this).addClass('active');
+
+		// Fade out all items smoothly
+		allItems.fadeOut(200);
+
+		// If "All" filter is selected, show only the first 6
+		if (filterValue === '*') {
+			setTimeout(() => {
+				allItems.slice(0, 6).fadeIn(400);
+			}, 200);
+		} else {
+			// Filter items and show only the first 6 of the selected category
+			const filteredItems = $(`${filterValue}.portfolio-item`);
+			setTimeout(() => {
+				filteredItems.slice(0, 6).fadeIn(400);
+			}, 200);
+		}
+	});
+});

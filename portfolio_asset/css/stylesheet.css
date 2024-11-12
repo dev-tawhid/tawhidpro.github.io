@@ -3373,4 +3373,8 @@ body, html {
     color: #fff;
   }
 
+  .portfolio-filter{
+    min-height: 572px;
+  }
+
 
